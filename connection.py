@@ -28,7 +28,7 @@ class Connection:
     def start_reader(self):
         while True:
             try:
-                data = self.conn.recv(1024)
+                data = self.conn.recv(self.server.max_package_size)
                 msg = unpack(data)
                 req = Request(self, msg)
                 self.server.msg_handler.handle_message(req)

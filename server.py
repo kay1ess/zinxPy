@@ -17,6 +17,7 @@ class Server:
             global_config = default_config
         else:
             global_config = reload(fp)
+            fp.close()
         try:
             self.name = global_config["name"]
             self.ip = global_config["host"]
@@ -30,7 +31,6 @@ class Server:
         self.on_connection_stop = None
         self.conn_manager = ConnectionManager()
         self.msg_handler = MessageHandler({})
-
 
         if self.tcp_version == "tcp4":
             family = socket.AF_INET
