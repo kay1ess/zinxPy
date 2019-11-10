@@ -9,6 +9,10 @@ from zinxPy.server import Server
 from zinxPy.router import BaseRouter
 
 
+fp = open("config.json", encoding="utf-8")
+server = Server(fp)
+
+@server.router(1)
 class MyRouter(BaseRouter):
 
     def before_handle(self, request):
@@ -22,6 +26,7 @@ class MyRouter(BaseRouter):
         print("=================after handle=======================")
 
 
+@server.router(2)
 class Disconnection(BaseRouter):
     """用于断开指定的链接"""
 
@@ -49,11 +54,8 @@ def stop():
     print("on stop")
 
 
-if __name__ == "__main__":
-    fp = open("config.json", encoding="utf-8")
-    server = Server(fp)
-    server.add_router(1, MyRouter())
-    server.add_router(2, Disconnection())
-    server.on_connection_start = start
-    server.on_connection_stop = stop
-    server.serve()
+
+
+server.on_connection_start = start
+server.on_connection_stop = stop
+server.serve()

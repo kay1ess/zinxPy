@@ -23,6 +23,7 @@ class Server:
             self.ip = global_config["host"]
             self.port = global_config["port"]
             self.max_conn = global_config["max_conn"]
+            self.max_package_size = global_config["max_package_size"]
         except KeyError:
             print("config error, please check the config file")
             return
@@ -42,6 +43,11 @@ class Server:
 
     def add_router(self, msg_id, router):
         self.msg_handler.add_router(msg_id, router)
+
+    def router(self, msg_id):
+        def decorator(router):
+            self.add_router(msg_id, router())
+        return decorator
 
     def process_request_thread(self):
         while True:

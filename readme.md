@@ -1,6 +1,6 @@
 #### zinxPy简介
 
-> 基于python的tcp框架， 主要参考golang的[zinx](https://github.com/aceld/zinx)框架进行实现，本项目主要用于学习， 同时也欢迎贡献代码。
+> 基于python的tcp框架， 主要参考golang的[Zinx](https://github.com/aceld/zinx)框架进行实现，本项目主要用于学习， 同时也欢迎贡献代码。
 
 #### 主要功能
 
@@ -48,9 +48,6 @@ config.json
     "port": 9999,         # 监听端口
     "name": "zinxPy",     # 服务器名
     "max_conn": 100,      # 最大连接数  
-    "max_package_size": 1024  # tcp包默认长度
+    "max_package_size": 1024  # tcp包最大长度
 }
 ```
-
-##### 鸣谢
-

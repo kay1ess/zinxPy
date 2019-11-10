@@ -2,7 +2,7 @@
 {
     "host": "0.0.0.0",
     "port": 9999,
-    "name": "zinx0.4",
+    "name": "zinxPy",
     "max_conn": 100,
     "max_package_size": 1024
 }
