@@ -12,6 +12,10 @@
 
 server.py
 ``` python
+from zinxPy.server import Server
+server = Server()
+
+@server.router(1)
 class MyRouter(BaseRouter):
 
     def before_handle(self, request):
@@ -24,8 +28,6 @@ class MyRouter(BaseRouter):
     def after_handle(self, request):
         print("=================after handle======================")
 
-server = Server()
-server.add_router(1, MyRouter())
 server.serve()
 ```
 
@@ -33,7 +35,7 @@ client.py
 ``` python
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('127.0.0.1', 9999))
-msg = Message(2, "delete".encode())
+msg = Message(1, "hello".encode())
 client.send(pack(msg))
 client.close()
 ```
