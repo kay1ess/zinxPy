@@ -11,7 +11,7 @@
 #### get start
 
 server.py
-```
+``` python
 class MyRouter(BaseRouter):
 
     def before_handle(self, request):
@@ -30,7 +30,7 @@ server.serve()
 ```
 
 client.py
-```
+``` python
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(('127.0.0.1', 9999))
 msg = Message(2, "delete".encode())
@@ -41,13 +41,13 @@ client.close()
 ##### 配置文件
 
 config.json
-```
+``` json
 
 {
-    "host": "0.0.0.0",    # 监听地址
-    "port": 9999,         # 监听端口
-    "name": "zinxPy",     # 服务器名
-    "max_conn": 100,      # 最大连接数  
-    "max_package_size": 1024  # tcp包最大长度
+    "host": "0.0.0.0",    // 监听地址
+    "port": 9999,         // 监听端口
+    "name": "zinxPy",     // 服务器名
+    "max_conn": 100,      // 最大连接数  
+    "max_package_size": 1024  // tcp包最大长度
 }
 ```
