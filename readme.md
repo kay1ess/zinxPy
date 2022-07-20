@@ -46,10 +46,10 @@ config.json
 ``` json
 
 {
-    "host": "0.0.0.0",    // 监听地址
-    "port": 9999,        // 监听端口
-    "name": "zinxPy",     // 服务器名
-    "max_conn": 100,      // 最大连接数  
-    "max_package_size": 1024  // tcp包最大长度
+    "host": "0.0.0.0", 
+    "port": 9999,
+    "name": "zinxPy",
+    "max_conn": 100,
+    "max_package_size": 1024
 }
 ```
